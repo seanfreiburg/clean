@@ -1,10 +1,12 @@
 package com.sf.login_domain.impl
 
 import com.sf.login_domain.pub.useCase.IsLoggedInUseCase
+import javax.inject.Inject
 
-class RealIsLoggedInUseCase constructor(private val loginRepo: LoginRepo) : IsLoggedInUseCase {
+class RealIsLoggedInUseCase @Inject constructor(/*private val loginRepo: LoginRepo*/) : IsLoggedInUseCase {
 
     override suspend operator fun invoke(): Result<Boolean> {
-        return loginRepo.fetchLoginState()
+        //return loginRepo.fetchLoginState()
+        TODO()
     }
 }
