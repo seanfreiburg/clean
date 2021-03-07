@@ -8,3 +8,11 @@ dependencyResolutionManagement {
 }
 rootProject.name = "clean"
 include ':app'
+include ':login-ui'
+include ':login-domain'
+include ':login-data'
+include ':common-ui'
+include ':login-domain:pub'
+include ':login-domain:impl'
+include ':login-domain:wiring'
+include ':common-dagger'

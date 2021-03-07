@@ -10,6 +10,14 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/common-dagger" />
+            <option value="$PROJECT_DIR$/common-ui" />
+            <option value="$PROJECT_DIR$/login-data" />
+            <option value="$PROJECT_DIR$/login-domain" />
+            <option value="$PROJECT_DIR$/login-domain/impl" />
+            <option value="$PROJECT_DIR$/login-domain/pub" />
+            <option value="$PROJECT_DIR$/login-domain/wiring" />
+            <option value="$PROJECT_DIR$/login-ui" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

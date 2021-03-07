@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
 }
@@ -8,13 +8,13 @@ android {
     compileSdkVersion 30
 
     defaultConfig {
-        applicationId "com.sf.clean"
         minSdkVersion 29
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -29,9 +29,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-        useIR = true
         freeCompilerArgs = ["-Xallow-result-return-type"]
     }
+
     buildFeatures {
         compose true
     }
@@ -43,10 +43,12 @@ android {
 
 dependencies {
 
-    implementation project(':login-ui')
+    implementation project(':common-ui')
+    implementation project(':login-domain')
 
     implementation 'com.airbnb.android:mavericks:2.1.0'
     implementation 'com.airbnb.android:mavericks-navigation:2.1.0'
+    implementation 'com.airbnb.android:mavericks-compose:2.1.0-alpha01'
 
     implementation 'com.google.dagger:dagger:2.33'
     kapt "com.google.dagger:dagger-compiler:2.33"

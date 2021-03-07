@@ -1,4 +1,4 @@
-package com.sf.clean.ui.theme
+package com.sf.app_ui
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
