@@ -2,7 +2,7 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'app.cash.exhaustive'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -34,10 +34,8 @@ android {
 }
 
 dependencies {
-
-    implementation 'com.airbnb.android:mavericks:2.1.0'
-    implementation 'com.airbnb.android:mavericks-navigation:2.1.0'
-    implementation 'com.airbnb.android:mavericks-compose:2.1.0-alpha01'
+    implementation project(':login-data')
+    implementation project(':login-domain:pub')
 
     implementation 'com.google.dagger:dagger:2.33'
     kapt "com.google.dagger:dagger-compiler:2.33"

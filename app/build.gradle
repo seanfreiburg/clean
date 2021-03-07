@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'app.cash.exhaustive'
 }
 
 android {
@@ -31,7 +32,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
         useIR = true
-        freeCompilerArgs = ["-Xallow-result-return-type"]
+
     }
     buildFeatures {
         compose true

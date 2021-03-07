@@ -14,13 +14,23 @@ import com.sf.app_ui.CleanTheme
 fun LoginScreen() {
     val viewModel: LoginViewModel = mavericksViewModel()
     val count = viewModel.collectAsState(LoginState::count)
-    LoginScreenStateless(count.value, { viewModel.incrementCount() })
+    val isLoggedIn = viewModel.collectAsState(LoginState::loggedIn)
+    LoginScreenStateless(
+        count.value,
+        isLoggedIn.value,
+        { viewModel.incrementCount() },
+        { viewModel.logIn() },
+        { viewModel.logOut() }
+    )
 }
 
 @Composable
 fun LoginScreenStateless(
     count: Int,
-    onIncrementClick: () -> Unit
+    isLoggedIn: Boolean,
+    onIncrementClick: () -> Unit,
+    onLoginClick: () -> Unit,
+    onLogoutClick: () -> Unit
 ) {
     CleanTheme {
         // A surface container using the 'background' color from the theme
@@ -30,6 +40,15 @@ fun LoginScreenStateless(
                 Text(text = "Count $count")
                 Button(onClick = onIncrementClick) {
                     Text(text = "Increment Count")
+                }
+                if (isLoggedIn) {
+                    Button(onClick = onLogoutClick) {
+                        Text(text = "Logout")
+                    }
+                } else {
+                    Button(onClick = onLoginClick) {
+                        Text(text = "Login")
+                    }
                 }
             }
         }

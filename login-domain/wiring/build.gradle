@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'app.cash.exhaustive'
 }
 
 android {
@@ -36,6 +37,7 @@ android {
 dependencies {
     implementation project(':login-domain:pub')
     implementation project(':login-domain:impl')
+    implementation project(':login-data:wiring')
 
     implementation 'com.google.dagger:dagger:2.33'
     kapt "com.google.dagger:dagger-compiler:2.33"
